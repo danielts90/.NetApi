@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
-using MarketPlaceDomain.Dto;
-using MarketPlaceDomain.Entities;
-using MarketPlaceDomain.Interfaces;
+using MarketPlaceBusiness.Dto;
+using MarketPlaceBusiness.Entities;
+using MarketPlaceBusiness.Interfaces;
 
-namespace MarketPlaceDomain.Services
+namespace MarketPlaceBusiness.Services
 {
     public class BaseService<TDto, TEntity> : IBaseService<TDto, TEntity> where TDto : DtoBase where TEntity : EntityBase
     {

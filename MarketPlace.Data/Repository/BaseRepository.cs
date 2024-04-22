@@ -1,7 +1,7 @@
-﻿using MarketPlaceDomain.Entities;
-using MarketPlaceDomain.Interfaces;
+﻿using MarketPlaceBusiness.Entities;
+using MarketPlaceBusiness.Interfaces;
 
-namespace MarketPlaceDomain.Repository
+namespace MarketPlaceData.Repository
 {
     public abstract class BaseRepository<T> : IBaseRepository<T> where T : EntityBase
     {
@@ -46,6 +46,7 @@ namespace MarketPlaceDomain.Repository
         public T GetById(int id)
         {
             return entities.FirstOrDefault(e => e.Id == id);
+
         }
 
         public IEnumerable<T> GetAll()

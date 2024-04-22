@@ -1,6 +1,6 @@
-﻿using MarketPlaceDomain.Entities;
+﻿using MarketPlaceBusiness.Entities;
 
-namespace MarketPlaceDomain.Interfaces
+namespace MarketPlaceBusiness.Interfaces
 {
     public interface IBaseRepository<T> where T : EntityBase
     {

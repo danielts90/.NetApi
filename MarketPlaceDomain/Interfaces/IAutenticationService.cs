@@ -3,7 +3,8 @@ using MarketPlaceBusiness.Entities;
 
 namespace MarketPlaceBusiness.Interfaces
 {
-    public interface IProductService : IBaseService<ProductDto, Product>
+    public interface IAutenticationService
     {
+        string GenerateToken(UserDto user);
     }
 }

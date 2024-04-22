@@ -1,7 +1,8 @@
 ﻿using FluentValidation.Results;
-using MarketPlaceDomain.Entities;
+using MarketPlaceBusiness.Entities;
+using MarketPlaceBusiness.Validators;
 
-namespace MarketPlaceDomain.Dto
+namespace MarketPlaceBusiness.Dto
 {
     public class UserDto : DtoBase
     {
@@ -12,7 +13,8 @@ namespace MarketPlaceDomain.Dto
         public string? ConfirmPassword { get; set; }
         public override ValidationResult Validate()
         {
-            throw new NotImplementedException();
+            var validator = new UserValidator();
+            return validator.Validate(this);
         }
 
         protected override User ToEntity() =>

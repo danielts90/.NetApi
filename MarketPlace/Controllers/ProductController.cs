@@ -1,6 +1,6 @@
-﻿using MarketPlaceDomain.Dto;
-using MarketPlaceDomain.Entities;
-using MarketPlaceDomain.Interfaces;
+﻿using MarketPlaceBusiness.Dto;
+using MarketPlaceBusiness.Entities;
+using MarketPlaceBusiness.Interfaces;
 
 namespace MarketPlace.Controllers
 {

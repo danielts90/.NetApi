@@ -1,7 +1,7 @@
-﻿using MarketPlaceDomain.Dto;
-using MarketPlaceDomain.Entities;
+﻿using MarketPlaceBusiness.Dto;
+using MarketPlaceBusiness.Entities;
 
-namespace MarketPlaceDomain.Interfaces
+namespace MarketPlaceBusiness.Interfaces
 {
     public interface IBaseService<TDto, TEntity> where TDto : DtoBase where TEntity : EntityBase
     {

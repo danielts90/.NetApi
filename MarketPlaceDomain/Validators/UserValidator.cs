@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using MarketPlaceDomain.Dto;
+using MarketPlaceBusiness.Dto;
 
-namespace MarketPlaceDomain.Validators
+namespace MarketPlaceBusiness.Validators
 {
     public class UserValidator : AbstractValidator<UserDto>
     {

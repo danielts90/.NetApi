@@ -1,6 +1,6 @@
-﻿using MarketPlaceDomain.Dto;
+﻿using MarketPlaceBusiness.Dto;
 
-namespace MarketPlaceDomain.Entities
+namespace MarketPlaceBusiness.Entities
 {
     public class User : EntityBase
     {

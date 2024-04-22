@@ -1,11 +1,11 @@
-﻿using MarketPlaceDomain.Entities;
+﻿using MarketPlaceBusiness.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MarketPlaceDomain.Interfaces
+namespace MarketPlaceBusiness.Interfaces
 {
     public interface IProductRepository : IBaseRepository<Product>
     {

@@ -1,8 +1,8 @@
 ﻿using FluentValidation.Results;
-using MarketPlaceDomain.Entities;
-using MarketPlaceDomain.Validators;
+using MarketPlaceBusiness.Entities;
+using MarketPlaceBusiness.Validators;
 
-namespace MarketPlaceDomain.Dto
+namespace MarketPlaceBusiness.Dto
 {
     public class ProductDto : DtoBase
     {
@@ -13,8 +13,7 @@ namespace MarketPlaceDomain.Dto
         public override ValidationResult Validate()
         {
             var validator = new ProductValidator();
-            var validationResult = validator.Validate(this);
-            return validationResult;
+            return validator.Validate(this);
         }
 
         protected override EntityBase ToEntity() =>

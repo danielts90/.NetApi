@@ -1,7 +1,7 @@
 ﻿using FluentValidation.Results;
-using MarketPlaceDomain.Entities;
+using MarketPlaceBusiness.Entities;
 
-namespace MarketPlaceDomain.Dto
+namespace MarketPlaceBusiness.Dto
 {
     public abstract class DtoBase
     {

@@ -1,9 +1,10 @@
-﻿using MarketPlaceDomain.Dto;
-using MarketPlaceDomain.Entities;
+﻿using MarketPlaceBusiness.Dto;
+using MarketPlaceBusiness.Entities;
 
-namespace MarketPlaceDomain.Interfaces
+namespace MarketPlaceBusiness.Interfaces
 {
     public interface IUserService : IBaseService<UserDto, User>
     {
+        public string AutenticateUser(UserDto user);
     }
 }

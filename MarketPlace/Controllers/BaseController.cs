@@ -1,12 +1,15 @@
 ﻿using MarketPlace.Helpers;
-using MarketPlaceDomain.Dto;
-using MarketPlaceDomain.Entities;
-using MarketPlaceDomain.Interfaces;
+using MarketPlaceBusiness.Dto;
+using MarketPlaceBusiness.Entities;
+using MarketPlaceBusiness.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace MarketPlace.Controllers
 {
     [Route("[controller]")]
+    [Authorize]
     [ApiController]
     public abstract class BaseController<TDto, TEntity> : Controller 
         where TDto : DtoBase
@@ -20,6 +23,8 @@ namespace MarketPlace.Controllers
         }
 
         [HttpGet]
+        [SwaggerResponse(404, "Not Found")]
+        [SwaggerResponse(200, "OK")]
         public ActionResult<CustomResponse<IEnumerable<TDto>>> GetAll()
         {
             var itens = _service.GetAll();
@@ -30,6 +35,8 @@ namespace MarketPlace.Controllers
         }
 
         [HttpGet("{id}")]
+        [SwaggerResponse(404, "Not Found")]
+        [SwaggerResponse(200, "OK")]
         public ActionResult<CustomResponse<TDto>> GetById(int id)
         {
             var item = _service.GetById(id);
@@ -43,6 +50,8 @@ namespace MarketPlace.Controllers
         }
 
         [HttpPost]
+        [SwaggerResponse(400, "Bad Request")]
+        [SwaggerResponse(200, "OK")]
         public ActionResult<TDto> Post(TDto dto)
         {
             try
@@ -58,6 +67,9 @@ namespace MarketPlace.Controllers
         }
 
         [HttpPut("{id}")]
+        [SwaggerResponse(400, "Bad Request")]
+        [SwaggerResponse(404, "Not Found")]
+        [SwaggerResponse(200, "OK")]
         public IActionResult Put(int id, TDto dto)
         {
             if (id != dto.Id)
@@ -77,6 +89,9 @@ namespace MarketPlace.Controllers
         }
 
         [HttpDelete("{id}")]
+        [SwaggerResponse(400, "Bad Request")]
+        [SwaggerResponse(404, "Not Found")]
+        [SwaggerResponse(200, "OK")]
         public IActionResult Delete(int id)
         {
             var existentItem = _service.GetById(id);
