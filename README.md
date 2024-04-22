@@ -24,13 +24,9 @@ Você faz parte de uma equipe especializada em desenvolvimento de APIs de alta p
 
 3. **Requisitos da API:**
    - Implementar endpoints para adicionar, atualizar, excluir e listar produtos.
-   - Validar os dados recebidos nos endpoints usando FluentValidation.
+   - Validar os dados recebidos nos endpoints.
    - Documentar a API usando Swagger para facilitar o entendimento e o consumo.
 
-4. **Estrutura do Projeto:**
-   - Utilize uma arquitetura genérica para repositórios, serviços e controladores.
-   - Crie classes genéricas para facilitar a implementação de novas entidades no futuro.
-   - Mantenha a estrutura do projeto organizada e bem documentada.
 
 ### Como funciona
 
