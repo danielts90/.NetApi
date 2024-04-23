@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarketPlaceBusiness", "Mark
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Data", "3 - Data", "{1A142E83-3413-4389-8350-4D8967BCF600}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketPlace.Data", "MarketPlace.Data\MarketPlace.Data.csproj", "{DB889EFF-D14A-4988-8E47-12C34AB18C79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarketPlace.Data", "MarketPlace.Data\MarketPlace.Data.csproj", "{DB889EFF-D14A-4988-8E47-12C34AB18C79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarketPlaceMinimal", "MarketPlaceMinimal\MarketPlaceMinimal.csproj", "{E734FABF-8514-466C-81F4-133900742AA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{DB889EFF-D14A-4988-8E47-12C34AB18C79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB889EFF-D14A-4988-8E47-12C34AB18C79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB889EFF-D14A-4988-8E47-12C34AB18C79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E734FABF-8514-466C-81F4-133900742AA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E734FABF-8514-466C-81F4-133900742AA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E734FABF-8514-466C-81F4-133900742AA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E734FABF-8514-466C-81F4-133900742AA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +47,7 @@ Global
 		{F0DAE045-2D33-4ECE-B3B3-AF65EA574E0D} = {CD4E01C7-0C5A-456A-A43B-2A078F9B98C6}
 		{4FAABB37-E3A9-4E18-AB0D-68DB97C5CE2E} = {0A6DFFE3-BEAB-48A7-86F8-9BA964A2982B}
 		{DB889EFF-D14A-4988-8E47-12C34AB18C79} = {1A142E83-3413-4389-8350-4D8967BCF600}
+		{E734FABF-8514-466C-81F4-133900742AA4} = {CD4E01C7-0C5A-456A-A43B-2A078F9B98C6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B2B8F501-8FF0-41D8-AFB3-D0CB6A2838E8}
