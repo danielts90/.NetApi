@@ -4,6 +4,7 @@ using MarketPlaceBusiness.Helpers;
 using MarketPlaceBusiness.Interfaces;
 using MarketPlaceBusiness.Services;
 using MarketPlaceData.Repository;
+using MarketPlaceMinimal.Endpoints;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -90,110 +91,7 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
-var usersGroup = app.MapGroup("/Users");
-var productsGroup = app.MapGroup("/Products");
-
-#region UsersGroup
-usersGroup.MapGet("/{id:int}", (int id, IUserService userService) => Results.Ok(userService.GetById(id)))
-.RequireAuthorization()
-.WithTags("Users")
-.WithOpenApi();
-
-usersGroup.MapGet("/", (IUserService userService) => Results.Ok(userService.GetAll()))
-.RequireAuthorization()
-.WithTags("Users")
-.WithOpenApi();
-
-usersGroup.MapPost("/Autenticate", (UserDto user, IUserService userService) =>
-{
-    try
-    {
-        var token = userService.AutenticateUser(user);
-        return Results.Ok(token);
-    }
-    catch (Exception ex)
-    {
-        return Results.BadRequest(ex);
-    }
-});
-
-usersGroup.MapPost("/CreateRootUser", (IUserService userService) =>
-{
-    userService.Insert(new UserDto
-    {
-        Name = "root",
-        Email = "root@teste.com",
-        Password = "teste@123",
-        ConfirmPassword = "teste@123"
-    });
-    return userService.GetById(1);
-});
-
-usersGroup.MapPost("/", (UserDto user, IUserService userService) =>
-{
-    return userService.Insert(user);
-})
-.RequireAuthorization()
-.WithTags("Users")
-.WithOpenApi();
-
-usersGroup.MapPut("/{id:int}", (int id, UserDto user, IUserService userService) =>
-{
-    userService.Update(user);
-})
-.RequireAuthorization()
-.WithTags("Users")
-.WithOpenApi();
-
-usersGroup.MapDelete("/{id:int}", (int id, IUserService userService) =>
-{
-    userService.Delete(id);
-})
-.RequireAuthorization()
-.WithTags("Users")
-.WithOpenApi();
-
-#endregion
-#region ProductsGroup
-productsGroup.MapGet("/", (IProductService productService) =>
-{
-    return productService.GetAll();
-})
-.RequireAuthorization()
-.WithTags("Products")
-.WithOpenApi();
-
-productsGroup.MapGet("/{id:int}", (int id, IProductService productService) =>
-{
-    return productService.GetById(id);
-})
-.RequireAuthorization()
-.WithTags("Products")
-.WithOpenApi();
-
-productsGroup.MapPost("/", (ProductDto product, IProductService productService) =>
-{
-    productService.Insert(product);
-})
-.RequireAuthorization()
-.WithTags("Products")
-.WithOpenApi();
-
-productsGroup.MapPut("/{id:int}", (int id, ProductDto product,  IProductService productService) =>
-{
-    productService.Update(product);
-})
-.RequireAuthorization()
-.WithTags("Products")
-.WithOpenApi();
-
-productsGroup.MapDelete("/{id:int}", (int id, IProductService productService) =>
-{
-    productService.Delete(id);
-})
-.RequireAuthorization()
-.WithTags("Products")
-.WithOpenApi();
-#endregion
+app.MapUserEndpoints();
+app.MapProductsEndpoints();
 
 app.Run();
