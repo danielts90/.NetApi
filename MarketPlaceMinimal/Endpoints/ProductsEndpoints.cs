@@ -3,7 +3,7 @@ using MarketPlaceBusiness.Interfaces;
 
 namespace MarketPlaceMinimal.Endpoints
 {
-    public static class ProductsEndpointsExtension
+    public static class ProductsEndpoints
     {
         public static void MapProductsEndpoints(this IEndpointRouteBuilder app)
         {
@@ -12,7 +12,6 @@ namespace MarketPlaceMinimal.Endpoints
                .RequireAuthorization()
                .WithTags("Products")
                .WithOpenApi();
-
         }
         public static IResult HandleGetAll(IProductService productService) => TypedResults.Ok(productService.GetAll());
         public static IResult HandleGetById(int id, IProductService productService) => TypedResults.Ok(productService.GetById(id));

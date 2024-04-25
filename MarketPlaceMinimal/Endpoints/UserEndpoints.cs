@@ -3,7 +3,7 @@ using MarketPlaceBusiness.Interfaces;
 
 namespace MarketPlaceMinimal.Endpoints
 {
-    public static class UserEndpointsExtension
+    public static class UserEndpoints
     {
         public static void MapUserEndpoints(this IEndpointRouteBuilder app)
         {

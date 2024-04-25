@@ -51,7 +51,7 @@ namespace MarketPlaceBusiness.Services
 
         public void Update(TDto dto)
         {
-            _repository.Insert((TEntity)dto);
+            _repository.Update((TEntity)dto);
         }
     }
 }
